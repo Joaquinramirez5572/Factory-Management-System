@@ -19,7 +19,7 @@ Factories receive orders continuously and must process them in the order they ar
 
 - FIFO queue processing for factory orders
 - Unique order number generation
-- Order removal by order number
+- Queue state management for in-place updates without breaking FIFO access
 - Queue size and pending order checks
 
 ## Technical Stack
@@ -27,12 +27,12 @@ Factories receive orders continuously and must process them in the order they ar
 - Language: C++
 - Programming Paradigm: Object-oriented programming
 - Core Concepts: queue data structure, class design, menu logic
-- Data Structure: FIFO queue for order sequencing
+- Data Structure: FIFO queue for order sequencing and dynamic state updates
 
 ## Application Design
 
 - Order: stores customer name, order number, and widget count
-- Queue Manager: controls the pending order list
+- Queue Manager: maintains FIFO processing and safe queue state updates
 - Menu System: supports all user actions
 - Validation Logic: checks order numbers and input values
 

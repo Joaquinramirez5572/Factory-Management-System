@@ -13,7 +13,7 @@ This project demonstrates queue-based data management and menu-driven workflow d
 
 ## Why This Project Matters
 
-Factories receive orders continuously and must process them in the order they arrive. Without a structured queue, order handling becomes disorganized and customers may be served out of sequence. This application keeps order processing fair and efficient.
+Factories receive orders continuously and must process them in the order they arrive. Without a structured queue, order handling becomes disorganized and customers may be served out of sequence. This application simulates fair and efficient order processing/handling.
 
 ## Features
 

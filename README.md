@@ -16,7 +16,7 @@ This project demonstrates object-oriented programming, queue data structures, an
 
 ## Why This Project Matters
 
-Factories receive orders throughout the day that must be processed in the sequence they arrive. Without a structured queue system, tracking order status, managing customer requests, and prioritizing production becomes chaotic and error-prone. This application gives factory managers a reliable way to organize incoming orders, track their status, and process them systematically—ensuring fair order fulfillment and operational efficiency.
+Factories receive orders throughout the day that must be processed in the sequence they arrive. Without a structured queue system, tracking order status, managing customer requests, and prioritizing production becomes chaotic and error-prone. This application gives factory managers a reliable way to organize incoming orders, track their status, and process them systematically, ensuring fair order fulfillment and operational efficiency.
 
 ## Features
 

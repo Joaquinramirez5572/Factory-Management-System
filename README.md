@@ -1,75 +1,64 @@
-# Factory Management System
+# Factory Queue
 
-A C++ console application for managing factory operations, tracking production schedules, monitoring equipment status, and organizing workforce assignments. The project is designed to help factory managers optimize production workflows, maintain equipment inventories, and coordinate employee schedules efficiently.
+A C++ console application for managing widget orders in a factory queue system. The application helps factory staff track incoming orders, process them sequentially, and manage order details efficiently through a menu-driven interface.
 
 ## Overview
 
-Factory Management System is a desktop application built in C++ that allows factory managers to:
-- record and track production orders and schedules
-- manage equipment inventory and maintenance logs
-- assign workers to production lines and tasks
-- monitor production metrics and efficiency statistics
-- validate data entry to reduce operational errors
-- organize records by department, shift, or equipment type
+Factory Queue is a desktop application built in C++ that allows factory staff to:
+- add new customer orders to the queue with customer name and widget count
+- remove orders from the queue by order number
+- check the total number of pending orders waiting to be processed
+- view a detailed list of all pending orders in queue sequence
+- process the next order at the front of the queue
+- update existing orders by changing the number of widgets requested
 
-This project demonstrates object-oriented programming, modular system design, and practical software architecture for enterprise factory operations.
+This project demonstrates object-oriented programming, queue data structures, and practical software design for factory order management.
 
 ## Why This Project Matters
 
-Modern factories handle complex operations involving multiple production lines, equipment maintenance schedules, and workforce coordination. Without a structured management system, tracking production orders, equipment status, and worker assignments becomes error-prone and inefficient. This application gives factory managers a centralized platform to organize production data, track equipment lifecycles, and schedule workforce assignments—enabling better decision-making and operational efficiency.
+Factories receive orders throughout the day that must be processed in the sequence they arrive. Without a structured queue system, tracking order status, managing customer requests, and prioritizing production becomes chaotic and error-prone. This application gives factory managers a reliable way to organize incoming orders, track their status, and process them systematically—ensuring fair order fulfillment and operational efficiency.
 
 ## Features
 
-- Persistent data storage using file I/O for factory records
-- Production order tracking with status monitoring
-- Equipment inventory management and maintenance scheduling
-- Worker assignment and shift scheduling
-- Production metrics and efficiency analytics
-- Input validation for safe and consistent data entry
-- Sorting and filtering of records by department or equipment type
-- Statistical reporting on production output and equipment utilization
-- Practical factory optimization recommendations based on operational data
+- Queue-based order management with FIFO (First In, First Out) processing
+- Add customer orders with automatic unique order number generation
+- Remove orders from the queue by order number
+- Check current queue size and pending order count
+- Display all pending orders with customer names and widget quantities
+- Process orders sequentially from the front of the queue
+- Modify widget quantities for existing orders
+- Input validation for safe order entry
+- Menu-driven console interface for easy operation
+- Order number uniqueness checking to prevent duplicates
 
 ## Technical Stack
 
 - Language: C++
 - Programming Paradigm: Object-oriented programming
-- Core Concepts: std::vector, std::sort, lambda expressions, file handling, data persistence
-- Design Approach: modular classes with separated responsibilities
+- Core Concepts: std::queue, class design, data management, menu systems
+- Data Structure: Queue (FIFO) for order sequencing
 
 ## Application Design
 
-The application is organized around a comprehensive set of core components:
+The application is organized around a core component:
 
-- FactoryManager: manages overall factory operations and user workflows
-- ProductionOrder: represents manufacturing orders with scheduling and tracking
-- Equipment: tracks machinery, maintenance history, and operational status
-- Worker: manages employee assignments, shifts, and task allocation
-- Department: organizes production lines and staff by functional area
-- Data persistence layer: saves and reads factory data from local storage
-- Validation logic: ensures operational data is accurate and consistent
-- Analytics and reporting: computes production metrics and efficiency statistics
+- Order: represents a single customer order with customer name, order number, and widget quantity
+- OrderQueue: manages the queue of pending orders and user operations
+- Menu system: provides six main operations for interacting with the queue
+- Validation logic: ensures order numbers are unique and input is valid
+- Processing logic: handles sequential order fulfillment from queue front
 
-This structure keeps the system maintainable, scalable, and demonstrates clean separation of responsibilities—critical in enterprise-level software design.
+This structure demonstrates proper use of the queue data structure and clean separation of concerns in order management systems.
 
 ## Project Structure
 
 ```text
-Factory-Management-System/
+Factory-Queue/
 ├── main.cpp
-├── FactoryManager.h
-├── FactoryManager.cpp
-├── ProductionOrder.h
-├── ProductionOrder.cpp
-├── Equipment.h
-├── Equipment.cpp
-├── Worker.h
-├── Worker.cpp
-├── Department.h
-├── Department.cpp
-├── data.txt
+├── order.h
+├── order.cpp
 ├── README.md
-└── Ramirez Joaquin - Software Design Document Factory Management System.pdf
+└── Ramirez Joaquin - Software Design Document Factory Queue.pdf
 ```
 
 ## How to Run
@@ -78,23 +67,24 @@ Factory-Management-System/
 2. Open the project in Visual Studio.
 3. Build the solution.
 4. Run the application.
-5. Enter and manage factory operations through the console interface.
+5. Use the menu to add orders, process them, and manage the queue.
 
 ## Example Workflow
 
-- Add a new production order with deadline and specifications
-- Assign workers to production lines based on availability and skills
-- Log equipment maintenance and track maintenance schedules
-- View production metrics and efficiency reports
-- Adjust resource allocation to meet production targets
-- Monitor department-level performance and output statistics
+- Add a customer order with their name and desired widget quantity
+- View all pending orders in the queue to track incoming requests
+- Check how many orders are currently waiting to be processed
+- Process the next order at the front of the queue
+- Update an order if the customer requests a different widget quantity
+- Remove an order if the customer cancels their request
+- Repeat as new orders arrive throughout the day
 
 ## Testing and Validation
 
-The program includes comprehensive validation checks to improve operational reliability and reduce data entry errors. It also supports data persistence so factory records remain available across application sessions for continuity and audit trails.
+The program includes comprehensive test cases to verify all menu operations function correctly. It validates that orders are processed in the correct sequence (FIFO), prevents duplicate order numbers, and handles edge cases such as attempting to process an empty queue or remove non-existent orders.
 
 ## Software Design Document
 
 The full design document for this project is available in the repository:
 
-[Ramirez, Joaquin - Software Design Document Factory Management System](./Ramirez%20Joaquin%20-%20Software%20Design%20Document%20Factory%20Management%20System.pdf)
+[Ramirez, Joaquin - Software Design Document Factory Queue](./Ramirez%20Joaquin%20-%20Software%20Design%20Document%20Factory%20Queue.pdf)
